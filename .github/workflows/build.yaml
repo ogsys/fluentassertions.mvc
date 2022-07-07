@@ -56,11 +56,12 @@ jobs:
         shell: pwsh
         run: >
           dotnet nuget push "${{ runner.temp }}\bin\*.nupkg"
-          -s https://api.nuget.org/v3/index.json
+          -s $env:NUGET_PUSH_URL
           -k $env:NUGET_API_KEY
           --skip-duplicate
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_PUSH_URL: ${{ secrets.NUGET_PUSH_URL || format('https://nuget.pkg.github.com/{0}/index.json', github.repository_owner) }}
+          NUGET_API_KEY:  ${{ secrets.NUGET_API_KEY  || secrets.GITHUB_TOKEN }}
 
       - name: Create Release
         uses: ncipollo/release-action@v1

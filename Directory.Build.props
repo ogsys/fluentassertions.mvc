@@ -10,7 +10,7 @@
   <!-- Descriptive properties -->
   <PropertyGroup>
     <Product>FluentAssertions.Mvc</Product>
-    <VersionPrefix>0.9.0-pre.0</VersionPrefix>
+    <VersionPrefix>0.9.0-pre.1</VersionPrefix>
     <Authors>Casey Burns, Kevin Kuszyk</Authors>
     <Copyright>Copyright 2022</Copyright>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
